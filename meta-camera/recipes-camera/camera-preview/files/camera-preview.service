@@ -1,0 +1,16 @@
+[Unit]
+Description=Live camera preview on HDMI (rpicam-hello, DRM/KMS)
+# Do NOT order After=multi-user.target: the service is WantedBy= that target,
+# which would create an ordering cycle and systemd may drop this job.
+After=systemd-udev-settle.service
+Wants=systemd-udev-settle.service
+
+[Service]
+Type=simple
+# -t 0 runs forever; with no X/Wayland, rpicam-hello renders through DRM/KMS
+ExecStart=/usr/bin/rpicam-hello -t 0
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
