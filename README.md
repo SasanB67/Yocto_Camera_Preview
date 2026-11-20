@@ -1,1 +1,1 @@
-Description: At boot it shows the live picture from the Camera Module V2 (IMX219) full-screen on HDMI
+Description: At boot it shows the live picture from the Camera Module V2 (IMX219) full-screen on HDMI. Required HW: Raspberrypi3-64
